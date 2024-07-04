@@ -1,0 +1,55 @@
+<!-- Index page will inherit the content from parent.html template -->
+{% extends 'parent.html' %}
+
+<!-- writing the code for title block -->
+{% block title %}
+
+<title>Update</title>
+
+{% endblock title %}
+
+<!-- This will contain the main part of the page -->
+{% block main %}
+<main>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Add Account Form -->
+        <div class="card mb-4">
+            <div class="card-header">
+                Update your Account
+            </div>
+            <div class="card-body">
+                <form action="/update?id={{reqdetails.id}}"method="POST">
+                    <div class="form-group">
+                        <label for="accountHolderName">Account Holder Name</label>
+                        <input type="text" class="form-control" id="accountHolderName" placeholder="Enter account holder name" name="accountholder" value="{{ reqdetails.accountHolderName }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountNumber">Account Number</label>
+                        <input type="text" class="form-control" id="accountNumber" placeholder="Enter account number" name="accountnumber"  value="{{ reqdetails.accountNumber }}">
+                    </div>
+                    <div class="form-group">
+                            <label for="accountType">Account Type</label>
+                            <select class="form-control" id="accountType" name="accounttype" value="{{ reqdetails.accountType }}">
+                                <option value="">Select account type</option>
+                                <option value="savings">Savings Account</option>
+                                <option value="current">Current Account</option>
+                                <option value="fixed_deposit">Fixed Deposit Account</option>
+                                <option value="recurring_deposit">Recurring Deposit Account</option>
+                                <option value="joint">Joint Account</option>
+                                <option value="nri">Non-Resident Indian Account (NRI Account)</option>
+                            </select>
+                        </div>
+                    <div class="form-group">
+                        <label for="accountBalance">Account Balance</label>
+                        <input type="number" class="form-control" id="accountBalance" placeholder="Enter account balance" name="accountbalance"value="{{ reqdetails.accountBalance }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">update the Account</button>
+                </form>
+            </div>
+        </div>
+
+
+    </main>
+    {% endblock main %}

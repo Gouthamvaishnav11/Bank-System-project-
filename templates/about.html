@@ -1,0 +1,56 @@
+{% extends 'parent.html' %}
+
+<!-- writing the code for title block -->
+{% block title %}
+
+<title>About</title>
+
+{% endblock title %}
+
+<!-- This will contain the main part of the page -->
+{% block main %}
+<main>
+    <div class="container mt-5">
+        <h2 class="text-center">About Goutham Bank System </h2>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <p class="lead">
+                    Welcome to Goutham Bank, your reliable partner in efficient bank system management. Our application is designed
+                    to streamline and enhance the management of banking operations, offering a comprehensive solution for
+                    banks of all sizes.
+                </p>
+                <h4>Our Mission</h4>
+                <p>
+                    Our mission is to provide a secure, user-friendly, and efficient banking management system that meets the
+                    needs of modern financial institutions. We aim to help banks manage their operations with greater ease,
+                    accuracy, and security.
+                </p>
+                <h4>Features</h4>
+                <ul>
+                    <li>Account Management: Simplify the process of managing customer accounts with intuitive tools.</li>
+                    <li>Security: Ensure the highest level of security with our robust encryption and fraud detection systems.</li>
+                    <li>Customer Support: Provide excellent customer service with our integrated support tools.</li>
+                </ul>
+                <h4>Why Choose Us?</h4>
+                <p>
+                    GouthamBank is built with the latest technology and industry best practices. Our team of experts continuously
+                    works to update and improve the system, ensuring it meets the evolving needs of the banking industry. Choose
+                    BankSys for a reliable, efficient, and secure banking management solution.
+                </p>
+                <h4>Contact Us</h4>
+                <p>
+                    If you have any questions or would like to learn more about our services, please feel free to <a href="/contact">contact
+                    us</a>. We are here to help you with all your banking management needs.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <p>&copy; 2024 GOUTHAM BANK. All rights reserved.</p>
+        </div>
+    </footer>
+    </main>
+    
+    {% endblock main %}

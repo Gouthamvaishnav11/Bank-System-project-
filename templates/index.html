@@ -1,0 +1,86 @@
+<!-- Index page will inherit the content from parent.html template -->
+{% extends 'parent.html' %}
+
+<!-- writing the code for title block -->
+{% block title %}
+
+<title>Home</title>
+
+{% endblock title %}
+
+<!-- This will contain the main part of the page -->
+{% block main %}
+<main>
+
+    <!-- Main Container -->
+<div class="container">
+    <!-- Add Account Form -->
+    <div class="card mb-8">
+        <div class="card-header">
+            Add New Account
+        </div>
+        <div class="card-body">
+            <form action="/" method="POST"class=" bg-light border rounded">
+                <div class="form-group">
+                    <label for="accountHolderName">Account Holder Name</label>
+                    <input type="text" class="form-control" id="accountHolderName" placeholder="Enter account holder name" name="accountholder">
+                </div>
+                <div class="form-group">
+                    <label for="accountNumber">Account Number</label>
+                    <input type="text" class="form-control" id="accountNumber" placeholder="Enter account number" name="accountnumber">
+                </div>
+                <div class="form-group">
+                    <label for="accountType">Account Type</label>
+                    <select class="form-control" id="accountType" name="accounttype">
+                        <option value="">Select account type</option>
+                        <option value="savings">Savings Account</option>
+                        <option value="current">Current Account</option>
+                        <option value="fixed_deposit">Fixed Deposit Account</option>
+                        <option value="recurring_deposit">Recurring Deposit Account</option>
+                        <option value="joint">Joint Account</option>
+                        <option value="nri">Non-Resident Indian Account (NRI Account)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="accountBalance">Account Balance</label>
+                    <input type="number" class="form-control" id="accountBalance" placeholder="Enter account balance" name="accountbalance">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Heading 2 -->
+    <h1 class="my-3 text-center">Account Details</h1>
+
+    <!-- Table for viewing the details -->
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Account Holder Name</th>
+                <th>Account Number</th>
+                <th>Account Type</th>
+                <th>Account Balance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for account in alldetails %}
+            <tr>
+                <th scope="row">{{ account.id }}</th>
+                <td>{{ account.accountHolderName }}</td>
+                <td>{{ account.accountNumber }}</td>
+                <td>{{ account.accountType }}</td>
+                <td>{{ account.accountBalance }}</td>
+                <td>
+                    <a href="/update?id={{ account.id }}" class="btn btn-primary">Update</a>
+                    <a href="/delete?id={{ account.id }}" class="btn btn-secondary">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</main>
+{% endblock main %}
