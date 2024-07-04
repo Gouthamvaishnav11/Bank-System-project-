@@ -10,3 +10,5 @@ Technologies Used
 Frontend: HTML, CSS
 Backend: Flask (Python)
 Database: SQLite with ORM
+
+![banking system](https://github.com/Gouthamvaishnav11/Bank-System-project-/assets/164034025/e65628d9-cfc9-4e2b-96ff-61673f57883b)
